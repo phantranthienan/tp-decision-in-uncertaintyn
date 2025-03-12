@@ -1,7 +1,8 @@
 import numpy as np
+import random
 
 def pull(arm, success_rates):
-    return np.random.binomial(1, success_rates[arm])
+    return 1 if random.random() < success_rates[arm] else 0  # Bernoulli distribution
 
 def initialize_bandit(K, success_rates):
     s = np.zeros(K)  # Cumulative rewards

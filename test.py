@@ -1,6 +1,6 @@
 import numpy as np
 import time
-from bandit_env import pull, initialize_bandit
+from bandit_setup import pull, initialize_bandit
 
 def bandit_random(K, N, success_rates):
     s, n, total_reward = initialize_bandit(K, success_rates)
