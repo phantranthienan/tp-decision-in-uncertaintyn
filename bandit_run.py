@@ -10,18 +10,18 @@ from bandit_algos import (
     bandit_ucb
 )
 
-def run_bandit(K, N, success_rates, algo):
-    s, n, total_reward = initialize_bandit(K, success_rates)
+# def run_bandit(K, N, success_rates, algo):
+#     s, n, total_reward = initialize_bandit(K, success_rates)
 
-    for t in range(K, N):
-        chosen_arm = algo(s, n, t)
+#     for t in range(K, N):
+#         chosen_arm = algo(s, n, t)
 
-        r = pull(chosen_arm, success_rates)
-        s[chosen_arm] += r
-        n[chosen_arm] += 1
-        total_reward += r
+#         r = pull(chosen_arm, success_rates)
+#         s[chosen_arm] += r
+#         n[chosen_arm] += 1
+#         total_reward += r
     
-    return total_reward
+#     return total_reward
 
 def run_scenario(K, N, success_rates, num_runs):
     random_algo = bandit_random

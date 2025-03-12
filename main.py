@@ -1,6 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
-
 from bandit_run import run_scenario
 from plot_results import plot_results
 

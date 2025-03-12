@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import math
 
 def bandit_random(s, n, t):
     return random.randint(0, len(s)-1)
@@ -13,7 +14,7 @@ def bandit_epsilon_greedy(epsilon = 0.1):
     return algo
 
 def bandit_epsilon_greedy_decay(s, n, t):
-    epsilon = 1/np.log(t*t)
+    epsilon = 1/math.log(t*t)
     if np.random.rand() < epsilon:
         return random.randint(0, len(s)-1)
     else:
