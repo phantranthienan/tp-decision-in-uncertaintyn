@@ -10,19 +10,6 @@ from bandit_algos import (
     bandit_ucb
 )
 
-# def run_bandit(K, N, success_rates, algo):
-#     s, n, total_reward = initialize_bandit(K, success_rates)
-
-#     for t in range(K, N):
-#         chosen_arm = algo(s, n, t)
-
-#         r = pull(chosen_arm, success_rates)
-#         s[chosen_arm] += r
-#         n[chosen_arm] += 1
-#         total_reward += r
-    
-#     return total_reward
-
 def run_scenario(K, N, success_rates, num_runs):
     random_algo = bandit_random
     eps_algo = bandit_epsilon_greedy(epsilon=0.1)
@@ -96,3 +83,16 @@ def run_bandit_trace(K, N, success_rates, algo):
         cumulative_times[t] = (t_after - start_time)
 
     return cumulative_rewards, cumulative_times
+
+# def run_bandit(K, N, success_rates, algo):
+#     s, n, total_reward = initialize_bandit(K, success_rates)
+
+#     for t in range(K, N):
+#         chosen_arm = algo(s, n, t)
+
+#         r = pull(chosen_arm, success_rates)
+#         s[chosen_arm] += r
+#         n[chosen_arm] += 1
+#         total_reward += r
+    
+#     return total_reward
